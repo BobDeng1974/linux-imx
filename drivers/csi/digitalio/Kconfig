@@ -1,0 +1,8 @@
+config DIGITALIO
+       tristate "Build Digital I/O module"
+       depends on m
+       select GPIO_MCP23S08
+       help
+         This builds the Digital I/O module, named digitalio.ko. The
+         digitalio module sits uppon mcp23s08.ko module, register its gpio
+         and provide a simpler interface for working with it.

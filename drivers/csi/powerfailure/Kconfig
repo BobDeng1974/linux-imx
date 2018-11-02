@@ -1,0 +1,8 @@
+config POWERFAILURE
+       tristate "Build Power Failure module"
+       depends on m
+       help
+         This builds the Power Failure module, named
+         powerfailure.ko. The Power Failure module is in charge to
+         detect that main power supply is out and brings a clean shutdown.
+         

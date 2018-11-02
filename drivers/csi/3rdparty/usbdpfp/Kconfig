@@ -1,0 +1,6 @@
+config DPFINGERPRINT
+       tristate "Build Digital Persona's USB Finger Print driver"
+       depends on m
+       help
+         This builds the Digital Personas USB Finger print driver. Driver
+         is named usbdpfp.ko
