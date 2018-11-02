@@ -206,4 +206,14 @@ source "drivers/fpga/Kconfig"
 
 source "drivers/tee/Kconfig"
 
+menu "CSI Drivers"
+
+source "drivers/csi/digitalio/Kconfig"
+
+source "drivers/csi/powerfailure/Kconfig"
+
+source "drivers/csi/3rdparty/usbdpfp/Kconfig"
+
+endmenu
+
 endmenu
