@@ -11,8 +11,8 @@
 #include <linux/digitalio.h>
 #include <linux/ioctl.h>
 
-#define FIRST_INPUT        240
-#define FIRST_OUTPUT       248
+#define FIRST_INPUT        496
+#define FIRST_OUTPUT       504
 #define NUM_GPIO            12
 #define FIRSTMIN             0
 #define DIRECTION_INPUT      0
@@ -223,7 +223,6 @@ struct file_operations fops = {
 };
 
 /* Init/Exit -------------------------------------------------------------- */
-
 static int __init digitalio_init(void)
 {
         int status;
