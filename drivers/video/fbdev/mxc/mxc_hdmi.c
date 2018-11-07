@@ -55,6 +55,7 @@
 #include <linux/mfd/mxc-hdmi-core.h>
 
 #define DISPDRV_HDMI	"hdmi"
+#define DEBUG
 #define HDMI_EDID_LEN		512
 
 /* status codes for reading edid */
@@ -64,13 +65,13 @@
 #define HDMI_EDID_NO_MODES	-3
 
 #define NUM_CEA_VIDEO_MODES	64
-#define DEFAULT_VIDEO_MODE	16 /* 1080P */
+#define DEFAULT_VIDEO_MODE	48 /* CSI Panel */
 
 #define RGB			0
 #define YCBCR444		1
 #define YCBCR422_16BITS		2
 #define YCBCR422_8BITS		3
-#define XVYCC444            4
+#define XVYCC444            	4
 
 /*
  * We follow a flowchart which is in the "Synopsys DesignWare Courses
@@ -1825,7 +1826,7 @@ static void mxc_hdmi_edid_rebuild_modelist(struct mxc_hdmi *hdmi)
 static void  mxc_hdmi_default_edid_cfg(struct mxc_hdmi *hdmi)
 {
 	/* Default setting HDMI working in HDMI mode */
-	hdmi->edid_cfg.hdmi_cap = true;
+	hdmi->edid_cfg.hdmi_cap = false;
 }
 
 static void  mxc_hdmi_default_modelist(struct mxc_hdmi *hdmi)
@@ -1947,14 +1948,17 @@ static void mxc_hdmi_cable_connected(struct mxc_hdmi *hdmi)
 	/* HDMI Initialization Steps D, E, F */
 	switch (edid_status) {
 	case HDMI_EDID_SUCCESS:
+		dev_dbg(&hdmi->pdev->dev, "EDID success\n");
 		mxc_hdmi_edid_rebuild_modelist(hdmi);
 		break;
 
 	/* Nothing to do if EDID same */
 	case HDMI_EDID_SAME:
+		dev_dbg(&hdmi->pdev->dev, "EDID same\n");
 		break;
 
 	case HDMI_EDID_FAIL:
+		dev_dbg(&hdmi->pdev->dev, "EDID failed\n");
 		mxc_hdmi_default_edid_cfg(hdmi);
 		/* No break here  */
 	case HDMI_EDID_NO_MODES:

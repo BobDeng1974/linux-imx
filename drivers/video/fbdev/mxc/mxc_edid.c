@@ -31,7 +31,7 @@
 #include <video/mxc_edid.h>
 #include "../edid.h"
 
-#undef DEBUG  /* define this for verbose EDID parsing output */
+#define DEBUG  /* define this for verbose EDID parsing output */
 #ifdef DEBUG
 #define DPRINTK(fmt, args...) printk(fmt, ## args)
 #else
@@ -180,6 +180,22 @@ const struct fb_videomode mxc_cea_mode[64] = {
 		FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
 		FB_VMODE_NONINTERLACED | FB_VMODE_ASPECT_16_9, 0
 	},
+	 /* CSI Painel */
+	[48] = { /* name */         NULL,
+                 /* refresh */      60,
+                 /* xres */         600,
+                 /* yres */         800,
+                 /* pixclock */     25000,
+                 /* left_margin */  112,
+                 /* right_margin */ 112,
+                 /* upper_margin */ 32,
+                 /* lower_margin */ 12,
+                 /* hsync_len */    12,
+                 /* vsync_len */    4,
+                 /* sync */         FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+                 /* vmode */        FB_VMODE_NONINTERLACED,
+                 /* flags */        0
+        },
 };
 
 /*

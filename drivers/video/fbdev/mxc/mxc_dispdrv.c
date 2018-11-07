@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2015 Freescale Semiconductor, Inc. All Rights Reserved.
+ * Copyright (C) 2011-2014 Freescale Semiconductor, Inc. All Rights Reserved.
  */
 
 /*
@@ -89,7 +89,7 @@ EXPORT_SYMBOL_GPL(mxc_dispdrv_unregister);
 struct mxc_dispdrv_handle *mxc_dispdrv_gethandle(char *name,
 	struct mxc_dispdrv_setting *setting)
 {
-	int ret = -ENODEV, found = 0;
+	int ret, found = 0;
 	struct mxc_dispdrv_entry *entry;
 
 	mutex_lock(&dispdrv_lock);
@@ -106,7 +106,7 @@ struct mxc_dispdrv_handle *mxc_dispdrv_gethandle(char *name,
 	}
 	mutex_unlock(&dispdrv_lock);
 
-	return found ? (struct mxc_dispdrv_handle *)entry:ERR_PTR(ret);
+	return found ? (struct mxc_dispdrv_handle *)entry:ERR_PTR(-ENODEV);
 }
 EXPORT_SYMBOL_GPL(mxc_dispdrv_gethandle);
 

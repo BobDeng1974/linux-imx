@@ -439,7 +439,6 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
 	imx6q-tx6q-11x0-mb7.dtb \
 	imx6q-udoo.dtb \
 	imx6q-utilite-pro.dtb \
-	imx6q-var-som-enlace.dtb \
 	imx6q-var-dart.dtb \
 	imx6q-var-som-cap.dtb \
 	imx6q-var-som-res.dtb \
@@ -447,6 +446,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
 	imx6qp-var-som-cap.dtb \
 	imx6qp-var-som-res.dtb \
 	imx6qp-var-som-vsc.dtb \
+	imx6qp-var-som-enlace.dtb \
 	imx6q-wandboard.dtb \
 	imx6q-wandboard-revb1.dtb \
 	imx6qp-nitrogen6_max.dtb \

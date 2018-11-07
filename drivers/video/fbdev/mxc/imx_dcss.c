@@ -504,7 +504,7 @@ const struct fb_videomode imx_cea_mode[100] = {
 		FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
 		FB_VMODE_NONINTERLACED | FB_VMODE_ASPECT_16_9, 0
 	},
-	/* #95: 3840x2160p@30Hz 16:9 */
+ 	/* #95: 3840x2160p@30Hz 16:9 */
 	[95] = {
 		NULL, 30, 3840, 2160, 3367, 296, 176, 72, 8, 88, 10,
 		FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,

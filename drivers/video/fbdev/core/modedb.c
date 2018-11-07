@@ -16,7 +16,7 @@
 #include <linux/fb.h>
 #include <linux/kernel.h>
 
-#undef DEBUG
+#define DEBUG
 
 #define name_matches(v, s, l) \
     ((v).name && !strncmp((s), (v).name, (l)) && strlen((v).name) == (l))
