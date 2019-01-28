@@ -409,11 +409,11 @@
 	pinctrl-0 = <&pinctrl_i2c3_3>;
 	status = "okay";
 
-	/* DS1337 RTC module */
-	rtc@0x68 {
-		compatible = "dallas,ds1337";
-		reg = <0x68>;
-	};
+        /* DS1337 RTC module */
+        rtc@0x68 {
+                 compatible = "dallas,ds1337";
+                 reg = <0x68>;
+        };
 };
 
 &iomuxc {
