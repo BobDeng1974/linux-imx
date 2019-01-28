@@ -35,11 +35,13 @@
 
 };
 
-powerfailure {
+&ecspi1 {
+
+	powerfailure {
                 compatible = "powerfailure";
                 poff-gpio  = <&gpio5 12 0>;
                 atpfail-gpio   = <&gpio5 17 0>;
-        };
+	};
 };
 
 &mxcfb1 {
